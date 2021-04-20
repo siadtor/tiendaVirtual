@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include 'carrito.php';
 
@@ -58,7 +58,7 @@ include 'carrito.php';
 			</div>
 		</div><!--/header_top-->
 
-		
+
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -72,7 +72,7 @@ include 'carrito.php';
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user">
-								<?php 
+								<?php
 								if (isset($_SESSION["USUARIO"]) != ""){
 									echo $_SESSION["USUARIO"]; } else{
 										echo "Cuenta";
@@ -82,16 +82,16 @@ include 'carrito.php';
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito(<?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']); ?>)</a></li>
 								<li><a href=
-								"<?php 
+								"<?php
 								if (isset($_SESSION["USUARIO"]) != ""){
 									echo "logout.php"; } else{
 										echo "login.php";
 									}
 								 ?>">
-								
+
 								<i class="fa fa-lock">
-								</i> 
-								<?php 
+								</i>
+								<?php
 								if (isset($_SESSION["USUARIO"]) != ""){
 									echo "Cerrar Sesion"; } else{
 										echo "Iniciar Sesion";
@@ -123,8 +123,8 @@ include 'carrito.php';
 								<li><a href="index.php" class="active">INICIO</a></li>
 								<li class="dropdown"><a href="#">COMPRA<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Productos</a></li>
-										<li><a href="product-details.html">Detalles de Productos</a></li>
+                                        <li><a href="shop.php">Productos</a></li>
+
 										<!--<li><a href="checkout.html">Checkout</a></li>-->
 										<li><a href="cart.php">Carrito</a></li>
 										<li><a href="login.html">Autenticarse</a></li>
@@ -152,5 +152,3 @@ include 'carrito.php';
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-
-	

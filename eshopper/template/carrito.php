@@ -7,7 +7,7 @@ if(isset($_POST['btnSesion'])){
     $email= $_POST['email'];
     $clave= $_POST['Contraseña'];
 
-    $conexion = new mysqli("127.0.0.1:8888", "root", "", "tiendarb" );
+    $conexion = new mysqli("localhost:3306", "root", "", "tiendarb" );
     $consulta = "SELECT COUNT(*) as existe, nombre FROM `cliente` where email='$email' and clave='$clave'";
     $resultado = $conexion -> query($consulta);
     $filas = $resultado -> fetch_assoc();

@@ -1,7 +1,7 @@
 
 
-	
-<?php  	
+
+<?php
 include 'template/cabecera.php';
 ?>
 
@@ -73,8 +73,8 @@ include 'template/cabecera.php';
 							<td class="cart_delete">
 								<form action="" method="post">
 								<input type="hidden" name="id" id="id" value="<?php echo openssl_encrypt($producto['ID'],COD,KEY); ?>">
-								<button 
-								class="btn btn-warning" 
+								<button
+								class="btn btn-warning"
 								type="submit"
 								name="btnAccion"
 								value="Eliminar">
@@ -85,7 +85,7 @@ include 'template/cabecera.php';
 						</tr>
 						<?php $total = $total + ($producto['CANTIDAD']*$producto['ISV']*$producto['PRECIO']) + ($producto['CANTIDAD']*$producto['PRECIO']); ?>
 						<?php $subtotal = $subtotal + ($producto['CANTIDAD']*$producto['PRECIO']); ?>
-						
+
 						<?php } }?>
 
 					</tbody>
@@ -130,7 +130,7 @@ include 'template/cabecera.php';
 									<option>Canada</option>
 									<option>Dubai</option>
 								</select>
-								
+
 							</li>
 							<li class="single_field">
 								<label>Region / State:</label>
@@ -144,7 +144,7 @@ include 'template/cabecera.php';
 									<option>Canada</option>
 									<option>Dubai</option>
 								</select>
-							
+
 							</li>
 							<li class="single_field zip-field">
 								<label>Zip Code:</label>

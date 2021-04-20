@@ -1,5 +1,6 @@
-<?php 
+<?php
  include 'template/cabecera.php';
+
 
 ?>
 
@@ -77,7 +78,7 @@
 		</div>
 		</div>
 	<?php }?>
-		
+
 	<section>
 		<div class="container">
 			<div class="row">
@@ -219,18 +220,18 @@
 <!--
 						<div class="shipping text-center"><!--shipping-
 							<img src="images/home/shipping.jpg" alt="" />
-            </div><!--/shipping-->
+            </div><!--/shipping -->
 
 
 					</div>
 				</div>
-			
+
         <div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Articulos</h2>
         <?php
 
-          $conexion = new mysqli("127.0.0.1:8888", "root", "", "tiendarb" );
+          $conexion = new mysqli("localhost:3306", "root", "", "tiendarb" );
           $consulta = "SELECT * FROM producto where ProductoID <= 3";
           $resultado = $conexion -> query($consulta);
 
@@ -248,7 +249,7 @@
 
 
 										<div class="productinfo text-center">
-											<img src="images/home/<?php echo $filas['SKU'] ?>.jpg" alt="" />
+											<img src="images/home/<?php echo $filas['SKU'] ?>.jpg" alt="" onclick="productodetalle(\'' . %filas['ProductoID'] '\')" href="product-details.php" />
 											<!--<h2>L. <?php echo $filas['Precio'] ?></h2>-->
 											<h3><?php echo $filas['Nombre'] ?></h3>
 											<!--<button href="carrito.php" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart" ></i>Añadir al carrito</button>-->
@@ -266,9 +267,11 @@
 												<input type="hidden" name="isv" id="isv" value="<?php echo openssl_encrypt($filas['ISV'],COD,KEY); ?>">
 												<input type="hidden" name="sku" id="sku" value="<?php echo openssl_encrypt($filas['SKU'],COD,KEY); ?>">
 												<input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY);?>">
-												
+
+                        <a href="product-details.php?id=<?php echo $filas['ProductoID'] ?>" class="button">Ver Detalles</a> <br/>
 												<button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
-												</form>
+                      
+                        </form>
 
 											</div>
 										</div>
@@ -281,17 +284,17 @@
 
 						</div>
 
-					
-		
+
+
           <?php } ?>
 
 
-				
 
-			
-			
-		
-		
+
+
+
+
+
 	</section>
 
 <?php include 'template/piepagina.php'?>
